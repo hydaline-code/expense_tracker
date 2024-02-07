@@ -13,5 +13,14 @@
  *= require_tree .
  *= require_self
  */
+// Remove the invalid line
 
- 
+ body {
+  font-family: 'Arial', sans-serif;
+}
+
+// Customize the color of Bulma's primary button
+.button.is-primary {
+  background-color: #FF5733;
+  border-color: #FF5733;
+}
