@@ -26,13 +26,12 @@
   margin: 10px 0;
 }
 
-.hero-head{
+.hero-head {
   display: flex;
-  
 }
 
 .buttons {
-  justify-self: flex-end
+  justify-self: flex-end;
 }
 
 .container img {

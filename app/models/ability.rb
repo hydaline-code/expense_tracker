@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class Ability
   include CanCan::Ability
 
@@ -9,8 +7,8 @@ class Ability
     #   return unless user.present?
     #   can :read, :all
     #   return unless user.admin?
-      can :manage, :all, user_id: user.id
-      can :manage, ::Category, user_id: user.id
+    can :manage, :all, user_id: user.id
+    can :manage, ::Category, user_id: user.id
     #
     # The first argument to `can` is the action you are giving the user
     # permission to do.
