@@ -13,3 +13,28 @@
  *= require_tree .
  *= require_self
  */
+
+.hero-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-body h1,
+.hero-body h2 {
+  margin: 10px 0;
+}
+
+.hero-head {
+  display: flex;
+}
+
+.buttons {
+  justify-self: flex-end;
+}
+
+.container img {
+  max-width: 98vw;
+  height: auto;
+}
