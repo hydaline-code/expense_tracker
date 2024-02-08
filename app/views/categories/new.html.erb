@@ -1,0 +1,15 @@
+<%= form_with(model: @category, url: categories_path) do |form| %>
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :icon %>
+    <%= form.text_field :icon %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Save" %>
+  </div>
+<% end %>
