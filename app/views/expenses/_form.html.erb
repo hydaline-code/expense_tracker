@@ -1,34 +1,36 @@
-<%= form_with(model: expense, url: category_expenses_path(@category)) do |form| %>
-  <% if expense.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(expense.errors.count, "error") %> prohibited this expense from being saved:</h2>
+<h1>Add a New Expense</h1>
+
+<%= form_with(model: [@category, @expense]) do |form| %>
+  <% if @expense.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@expense.errors.count, "error") %> prohibited this expense from being saved:</h2>
 
       <ul>
-        <% expense.errors.each do |error| %>
-          <li><%= error.full_message %></li>
+        <% @expense.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
         <% end %>
       </ul>
     </div>
   <% end %>
 
-  <div class="container mx-auto bg-white px-3 py-2">
-    <div>
-      <%= form.label :category_id, class: "block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400" %>
-      <%= form.select :category_id, @categories.map { |category| [category.name, category.id] }, {}, { class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"} %>
-    </div>
+  <div>
+    <%= form.label :name %>
+    <%= form.text_field :name, required: true %>
+  </div>
 
-    <div class="relative z-0 w-full my-2 group">
-      <%= form.text_field :name, autocomplete: "name", autofocus: true, class: "block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer", placeholder: " ", required: true, id: "name" %>
-      <label for="floating_name" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Name</label>
-    </div>
+  <div>
+    <%= form.label :amount %>
+    <%= form.number_field :amount, required: true %>
+  </div>
 
-    <div class="relative z-0 w-full my-2 group">
-      <%= form.number_field :amount, autocomplete: "amount", class: "block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer", placeholder: " ", required: true, id: "amount" %>
-      <label for="floating_amount" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Amount</label>
-    </div>
+ <div>
+  <%= form.label :category_id, "Category" %>
+  <%= form.collection_select :category_id, Category.all, :id, :name %>
+</div>
 
-    <div class="text-gray-200 font-light text-center my-2 w-full">
-      <%= form.submit "Submit", class: "bg-primary hover:bg-blue-700 block py-3 px-4 rounded" %>
-    </div>
+  <div>
+    <%= form.submit "Save" %>
   </div>
 <% end %>
+
+<%= link_to "Back", category_expenses_path(@category) %>

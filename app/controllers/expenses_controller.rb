@@ -1,49 +1,76 @@
 class ExpensesController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_category, except: [:index]
+  before_action :set_expense, only: %i[show edit update destroy]
+  before_action :set_category
 
   # GET /expenses
-  # def index
-  #   @expenses = Expense.all
-  #   @total_amount = @expenses.sum(:amount)
-  # end
-
-  # GET /categories/:category_id/expenses
   def index
-    @expenses = Expense.order(created_at: :desc)
-    @total_amount =@expenses.sum(:amount)
+    @expenses = @category.expenses.order(created_at: :desc)
+    @total_amount = @category.expenses.sum(:amount)
   end
 
-  # GET /categories/:category_id/expenses/new
+  # GET /expenses/1
+  def show
+  end
+
+  
   def new
     @category = Category.find(params[:category_id])
-    @expense = Expense.new
+    @expense = @category.expenses.new
+  end
+  
+  
+
+  # GET /expenses/1/edit
+  def edit
+    @categories = current_user.categories
   end
 
-  # POST /categories/:category_id/expenses
+  # POST /expenses
   def create
-    @expense = @category.expenses.new(expense_params)
+  @expense = current_user.expenses.new(expense_params)
 
-    if @expense.save
-      redirect_to category_expenses_path(@category), notice: 'Expense was successfully created.'
+  if @expense.save
+    redirect_to category_expenses_path(@expense.category), notice: 'Expense was successfully created.'
+  else
+    puts @expense.errors.full_messages  # Print any validation errors to console
+    render :new, status: :unprocessable_entity
+  end
+end
+
+  
+
+  # PATCH/PUT /expenses/1
+  def update
+    if @expense.update(expense_params)
+      redirect_to @expense, notice: 'Expense was successfully updated.'
     else
-      flash.now[:alert] = 'Failed to create expense. Please check the form and try again.'
-      render :new
+      render :edit, status: :unprocessable_entity
     end
+  end
+
+  # DELETE /expenses/1
+  def destroy
+    @expense.destroy
+    redirect_to expenses_url, notice: 'Expense was successfully destroyed.'
   end
 
   private
 
   def set_category
-    @category = current_user.categories.find_by(id: params[:category_id])
-    if @category.nil?
-      flash[:alert] = "Category not found"
-      redirect_to root_path
-    end
+    @category = Category.find(params[:category_id])
+  rescue ActiveRecord::RecordNotFound
+    flash[:alert] = "Category not found"
+    redirect_to categories_path
   end
-  
 
+  # Use callbacks to share common setup or constraints between actions.
+  def set_expense
+    @expense = current_user.expenses.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
   def expense_params
-    params.require(:expense).permit(:name, :amount)
+    params.require(:expense).permit(:category_id, :name, :amount)
   end
 end

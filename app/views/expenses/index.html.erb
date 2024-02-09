@@ -1,16 +1,15 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Expenses</h1>
+<h1>Expenses for <%= @category.name %></h1>
 
-<div id="expenses">
-<p>Total Amount: <%= number_to_currency(@total_amount) %></p>
-
-  <% @expenses.each do |expense| %>
-    <%= render expense %>
-    <p>
-      <%= link_to "Show this expense", expense %>
-    </p>
-  <% end %>
+<div class="total-amount">
+  <p>Total Amount: <%= number_to_currency(@total_amount) %></p>
 </div>
 
-<%= link_to "New expense", new_expense_path %>
+<% @expenses.each do |expense| %>
+  <%= render partial: 'expense', locals: { expense: expense } %>
+<% end %>
+
+<%= link_to "Add a New Expense", new_category_expense_path(@category), class: "btn btn-primary" %>
+
+<%= link_to "Back", root_path, class: "btn btn-secondary" %>
