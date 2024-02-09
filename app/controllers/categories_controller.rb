@@ -53,7 +53,7 @@ end
     @category.destroy
     redirect_to root_path, flash: { success: 'Category was successfully destroyed.' }
   end
-
+  
   private
 
   # Use callbacks to share common setup to prevent unauthorized access

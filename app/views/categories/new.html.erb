@@ -1,16 +1,5 @@
-<%= form_with(model: @category, url: categories_path) do |form| %>
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
+<h1>New Category</h1>
 
-  <div class="field">
-    <%= form.label :icon %>
-    <%= form.text_field :icon %>
-  </div>
+<%= render 'form', category: @category %>
 
-  <div class="actions">
-    <%= form.submit "Save" %>
-  </div>
-   <%= render "form", category: @category %>
-<% end %>
+<%= link_to "Cancel", categories_path %>

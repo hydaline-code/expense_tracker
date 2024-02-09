@@ -1,0 +1,16 @@
+<h1>Category Details</h1>
+
+<div>
+  <p><strong>Name:</strong> <%= @category.name %></p>
+  <p><strong>Icon:</strong> <%= @category.icon %></p>
+ <p>Total Amount: <%= number_to_currency(@category.expenses.sum(:amount)) %></p>
+</div>
+
+<div>
+  <%= link_to "Edit", edit_category_path(@category), class: "btn btn-info" %>
+  <%= link_to "Delete", category_path(@category), method: :delete, data: { confirm: "Are you sure you want to delete this category?" }, class: "btn btn-danger" %>
+</div>
+
+
+
+<%= link_to "Back to Categories", categories_path %>
