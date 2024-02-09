@@ -1,0 +1,14 @@
+
+<div class="category">
+  <div class="category-details">
+    <h2><%= category.name %></h2>
+     <div class="category-icon">
+    <%= category.icon %>
+  </div>
+   <p>Total Amount: <%= number_to_currency(category.expenses.sum(:amount)) %></p>
+  </div>
+ 
+  <div class="category-actions">
+    <%= link_to "View Expenses", category_expenses_path(category), class: "btn btn-primary" %>
+  </div>
+</div>

@@ -2,15 +2,22 @@ class CategoriesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_category, only: %i[show edit update destroy]
 
+
   # GET /categories
-  def index
-    @categories = current_user.categories.order(created_at: :desc)
-  end
+def index
+  @categories = current_user.categories.includes(:expenses).order(created_at: :desc)
+end
+
 
   # GET /categories/1
+  # def show
+  #   @expenses = @category.expenses.order(created_at: :desc)
+  # end
   def show
+    @category = Category.find(params[:id])
     @expenses = @category.expenses.order(created_at: :desc)
   end
+  
 
   # GET /categories/new
   def new
