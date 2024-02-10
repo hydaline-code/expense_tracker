@@ -1,0 +1,10 @@
+<div class="flex flex-col">
+  <div class="container mx-auto flex justify-start items-center bg-primary text-white font-light px-3 py-4">
+    <%= link_to categories_path do %>
+      <i class="fa-solid fa-arrow-left fa-xl"></i>
+    <% end %>
+    <h5 class="font-light grow text-center">ADD EXPENSE</h5>
+  </div>
+
+  <%= render 'form', expense: @expense %>
+</div>
