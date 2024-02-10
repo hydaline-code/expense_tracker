@@ -35,7 +35,7 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [your_project_name] <a name="about-project"></a>
+# 📖 [Expense Tracker] <a name="about-project"></a>
 
 This is a mobile web application where you can manage your budget: you have a list of transactions associated with a category, so that you can see how much money you spent and on what.
 
@@ -79,6 +79,11 @@ This is a mobile web application where you can manage your budget: you have a li
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+## Video Presentation
+
+[video link](https://www.loom.com/share/074959dea42b4e408a9b17d4c450918d?sid=735c19aa-da01-4d73-8254-1347a510638f)
+
+
 <!-- GETTING STARTED -->
 
 ## 💻 Getting Started <a name="getting-started"></a>
@@ -100,10 +105,10 @@ This is a mobile web application where you can manage your budget: you have a li
 
 > Clone this repository to your desired folder:
 ```sh
-  git clone https://github.com/hydaline-code/myblogapp.git
+  git clone https://github.com/hydaline-code/expense_tracker.git
 ```
 ```sh
-  cd myblogapp
+  cd expense_tracker
 ```
 
 ### Install
