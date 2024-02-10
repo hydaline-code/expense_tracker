@@ -1,16 +1,24 @@
-<section class="hero is-fullheight is-primary">
+<section class="hero">
   <div class="hero-body">
-    <div class="hero-head">
-     <h1 class="title is-1 has-text-centered animate__animated animate__bounceInDown">Welcome to Expense Tracker</h1>
-      <div class="buttons is-centered animate__animated animate__fadeInUp buttons">
-        <%= link_to "Log in", new_user_session_path, class: "button is-primary is-large" %>
-        <%= link_to "Sign up", new_user_registration_path, class: "button is-light is-large" %>
-      </div>
-      </div>
     <div class="container">
-      <%= image_tag "https://cdn-ifgjf.nitrocdn.com/DCbROeehyZUHOBQWzjvCJNZTDXGStZHz/assets/desktop/optimized/rev-6404943/cdn.filestackcontent.com/9cm7vVXXSeG7zSMNnRXY", style: "max-width: 98vw; height: auto;" %>
-      <h2 class="subtitle is-3 has-text-centered animate__animated animate__fadeIn">Manage your budget with ease</h2>
-     
+      <div class="row">
+        <div class="col-12">
+          <h1 class="title is-1 text-center animate__animated animate__bounceInDown">Welcome to Expense Tracker</h1>
+        </div>
+      </div>
+      <%= image_tag "https://cdn-ifgjf.nitrocdn.com/DCbROeehyZUHOBQWzjvCJNZTDXGStZHz/assets/desktop/optimized/rev-6404943/cdn.filestackcontent.com/9cm7vVXXSeG7zSMNnRXY", style: "max-width: 68vw; height: auto;", class: "mx-auto d-block animate__animated animate__fadeIn" %>
+      <div class="row">
+        <div class="col-12 login">
+          <h2 class="subtitle is-3 text-center">Manage your budget with ease</h2>
+          <div class="text-center animate__animated animate__fadeInUp btns">
+            <%= link_to "Log in", new_user_session_path, class: "btn btn-info btn-lg mr-3 btn" %>
+            <%= link_to "Sign up", new_user_registration_path, class: "btn btn-light btn-lg btn" %>
+            <% if user_signed_in? %>
+              <%= link_to "Home", categories_path, class: "btn btn-primary btn-lg" %>
+            <% end %>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>

@@ -14,9 +14,15 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
-    <%= yield %>
+ <body>
+  
+<% if controller_name != 'splash' %>
+    <%= render 'layouts/with_navbar' %>
+  <% else %>
+     <% end %>
+     <%= yield %>
     <p class="notice"><%= notice %></p>
        <p class="alert"><%= alert %></p>
+        
   </body>
 </html>
