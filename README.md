@@ -1,33 +1,5 @@
 <a name="readme-top"></a>
 
-<!--
-!!! IMPORTANT !!!
-This README is an example of how you could professionally present your codebase. 
-Writing documentation is a crucial part of your work as a professional software developer and cannot be ignored. 
-
-You should modify this file to match your project and remove sections that don't apply.
-
-REQUIRED SECTIONS:
-- Table of Contents
-- About the Project
-  - Built With
-  - Live Demo
-- Getting Started
-- Authors
-- Future Features
-- Contributing
-- Show your support
-- Acknowledgements
-- License
-
-OPTIONAL SECTIONS:
-- FAQ
-
-After you're finished please remove all the comments and instructions!
-
-For more information on the importance of a professional README for your repositories: https://github.com/microverseinc/curriculum-transversal-skills/blob/main/documentation/articles/readme_best_practices.md
--->
-
 <div align="center">
   <!-- You are encouraged to replace this logo with your own! Otherwise you can also remove it. -->
   <img src="murple_logo.png" alt="logo" width="140"  height="auto" />
@@ -67,7 +39,8 @@ For more information on the importance of a professional README for your reposit
 
 > Describe your project in 1 or 2 sentences.
 
-**[your_project__name]** is a...
+This is a mobile web application where you can manage your budget: you have a list of transactions associated with a category, so that you can see how much money you spent and on what.
+
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -114,7 +87,7 @@ For more information on the importance of a professional README for your reposit
 
 > Add a link to your deployed project.
 
-- [Live Demo Link](https://google.com)
+- [Live Demo Link](https://moneymanager-342g.onrender.com/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -122,87 +95,58 @@ For more information on the importance of a professional README for your reposit
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
-> Describe how a new developer could make use of your project.
-
-To get a local copy up and running, follow these steps.
+> To get a local copy up and running, follow these steps.
 
 ### Prerequisites
 
-In order to run this project you need:
-
-<!--
-Example command:
-
+> In order to run this project you need:
+> - Download and Install [Ruby](https://www.ruby-lang.org/en/downloads/) for your OS.
+> - Download and Install [PostgreSQL](https://www.postgresql.org/download/)
+> - VS Code
+> - Ruby on Rails
 ```sh
- gem install rails
+  gem install rails
 ```
- -->
 
 ### Setup
 
-Clone this repository to your desired folder:
-
-<!--
-Example commands:
-
+> Clone this repository to your desired folder:
 ```sh
-  cd my-folder
-  git clone git@github.com:myaccount/my-project.git
+  git clone https://github.com/hydaline-code/myblogapp.git
 ```
---->
+```sh
+  cd myblogapp
+```
 
 ### Install
 
-Install this project with:
-
-<!--
-Example command:
-
+> Install this project with:
 ```sh
-  cd my-project
   gem install
 ```
---->
+
+```sh
+  bundle install
+```
 
 ### Usage
 
-To run the project, execute the following command:
-
-<!--
-Example command:
-
+> To run the project, execute the following command:
 ```sh
   rails server
 ```
---->
 
 ### Run tests
 
-To run tests, run the following command:
-
-<!--
-Example command:
+> To run linters check, run the following command:
 
 ```sh
-  bin/rails test test/models/article_test.rb
+  gem install rubocop
 ```
---->
-
-### Deployment
-
-You can deploy this project using:
-
-<!--
-Example:
 
 ```sh
-
+  rubocop
 ```
- -->
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- AUTHORS -->
 
 ## 👥 Authors <a name="authors"></a>
 
