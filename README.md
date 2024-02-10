@@ -37,8 +37,6 @@
 
 # 📖 [your_project_name] <a name="about-project"></a>
 
-> Describe your project in 1 or 2 sentences.
-
 This is a mobile web application where you can manage your budget: you have a list of transactions associated with a category, so that you can see how much money you spent and on what.
 
 
@@ -46,46 +44,36 @@ This is a mobile web application where you can manage your budget: you have a li
 
 ### Tech Stack <a name="tech-stack"></a>
 
-> Describe the tech stack and include only the relevant sections that apply to your project.
+> This application is built with PostgreSQL as a Database.
+<a href="https://www.postgresql.org/" target="_blank" rel="noreferrer"> <img
+      src="https://user-images.githubusercontent.com/57408419/178756727-8bfad119-18c2-49eb-98be-8b2d4bd71dd6.jpeg"
+      alt="react" width="120" height="70" /> </a>
 
 <details>
-  <summary>Client</summary>
+  <summary>Ruby</summary>
   <ul>
-    <li><a href="https://reactjs.org/">React.js</a></li>
+    <li><a href="https://www.ruby-lang.org/en/">Ruby - A Programmer's Best Friend</a></li>
   </ul>
 </details>
 
 <details>
-  <summary>Server</summary>
+  <summary>Ruby on Rails</summary>
   <ul>
-    <li><a href="https://expressjs.com/">Express.js</a></li>
+    <li><a href="https://guides.rubyonrails.org/">Ruby on Rails</a></li>
   </ul>
 </details>
-
-<details>
-<summary>Database</summary>
-  <ul>
-    <li><a href="https://www.postgresql.org/">PostgreSQL</a></li>
-  </ul>
-</details>
-
-<!-- Features -->
 
 ### Key Features <a name="key-features"></a>
 
-> Describe between 1-3 key features of the application.
-
-- **[key_feature_1]**
-- **[key_feature_2]**
-- **[key_feature_3]**
+- **[User identifcations]**
+- **[Can view all categories ]**
+- **[User can see how much spent in each each categorie]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- LIVE DEMO -->
 
 ## 🚀 Live Demo <a name="live-demo"></a>
-
-> Add a link to your deployed project.
 
 - [Live Demo Link](https://moneymanager-342g.onrender.com/)
 
@@ -166,9 +154,9 @@ This is a mobile web application where you can manage your budget: you have a li
 
 > Describe 1 - 3 features you will add to the project.
 
-- [ ] **[new_feature_1]**
-- [ ] **[new_feature_2]**
-- [ ] **[new_feature_3]**
+- [ ] **[Interactive screen ]**
+- [ ] **[Edit and delete buttons ]**
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
