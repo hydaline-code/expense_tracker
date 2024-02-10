@@ -8,11 +8,6 @@ def index
   @categories = current_user.categories.includes(:expenses).order(created_at: :desc)
 end
 
-
-  # GET /categories/1
-  # def show
-  #   @expenses = @category.expenses.order(created_at: :desc)
-  # end
   def show
     @category = Category.find(params[:id])
     @expenses = @category.expenses.order(created_at: :desc)
