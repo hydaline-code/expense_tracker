@@ -1,0 +1,38 @@
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), data: { turbo: false }) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+  <div class="session">
+    <div class="container mx-auto flex justify-between items-center bg-primary text-white font-light px-3 py-4 mb-3">
+      <%= link_to root_path do %>
+        <i class="fa-solid fa-arrow-left fa-xl "></i>
+      <% end %>
+      <h5 class="font-light">REGISTER</h5>
+      <%= f.submit "NEXT", class: "cursor-pointer font-light" %>
+    </div>
+
+    <div class="container mx-auto bg-white px-3 py-2">
+      
+      
+      <div class="relative z-0 w-full my-2 group">
+        <%= f.text_field :name, autocomplete: "name", autofocus: true, class: "block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer", placeholder: " ", required: true %>
+        <label for="floating_name" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Name</label>
+      </div>
+
+      <div class="relative z-0 w-full my-2 group">
+        <%= f.email_field :email, autocomplete: "email", class: "block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer", placeholder: " ", required: true %>
+        <label for="email" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Email</label>
+      </div>
+
+      <div class="relative z-0 w-full my-2 group">
+        <%= f.password_field :password, autocomplete: "password", class: "block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer", id: "floating_password", placeholder: " ", required: true %>
+        <label for="floating_password" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Password</label>
+      </div>
+
+      <div class="relative z-0 w-full group">
+        <%= f.password_field :password_confirmation, autocomplete: "password_confirmation", class: "block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer", id: "floating_password_c", placeholder: " ", required: true %>
+        <label for="floating_password_c" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Password confirmation</label>
+      </div>
+
+      
+    </div>
+  </div>
+<% end %>

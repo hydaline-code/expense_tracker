@@ -3,14 +3,31 @@
   <head>
     <title>ExpenseTracker</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= stylesheet_link_tag 'application', 'application' %>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+    <%= javascript_include_tag 'custom' %>
+
   </head>
 
-  <body>
-    <%= yield %>
+ <body>
+  
+ <main class=" bg-gray-100 container mx-auto max-w-sm">
+      <%= render partial: "layouts/navbar" %>
+      <%= yield %>
+      <p class="notice"><%= notice %></p>
+       <p class="alert"><%= alert %></p>
+    </main>
+    
   </body>
 </html>
