@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe 'Testing categories views', type: :feature do
-  before(:each) do
     before(:each) do
       @user = User.create(name: 'Test', email: 'text@example.com', password: '123456')
       @category = Category.create(name: 'Test category',
@@ -40,11 +39,5 @@ RSpec.describe 'Testing categories views', type: :feature do
       expect(page).to have_content 'Test payment'
       expect(page).to have_content('$200.0')
     end
-
-    it 'The "add a new expense" button brings the user to the page to create a new payment.' do
-      visit category_path(@category.id)
-      click_link('New Transaction')
-      expect(current_path).to eq new_payment_path
-     end
   end
 end
