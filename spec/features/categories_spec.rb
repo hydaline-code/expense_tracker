@@ -1,12 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe 'Testing categories views', type: :feature do
-    before(:each) do
-      @user = User.create(name: 'Test', email: 'text@example.com', password: '123456')
-      @category = Category.create(name: 'Test category',
-                                  icon: 'https://cdn-icons-png.flaticon.com/128/2731/2731636.png', user: @user)
-      @expense = Expense.create(name: 'Test payment', amount: 200, category: @category)
-
+  before(:each) do
+    @user = User.create(name: 'Test', email: 'text@example.com', password: '123456')
+    @category = Category.create(name: 'Test category',
+                                icon: 'https://cdn-icons-png.flaticon.com/128/2731/2731636.png', user: @user)
+    @expense = Expense.create(name: 'Test payment', amount: 200, category: @category)
 
     visit new_user_session_path
     find('#email').set @user.email
