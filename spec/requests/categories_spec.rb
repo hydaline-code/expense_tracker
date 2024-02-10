@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-RSpec.describe "Categories", type: :request do
-  describe "GET /index" do
+RSpec.describe 'Categories', type: :request do
+  describe 'GET /index' do
     before(:each) do
       @user = User.create(name: 'Test', email: 'text@example.com', password: '123456')
       @category = Category.create(name: 'Test category',
@@ -19,16 +19,15 @@ RSpec.describe "Categories", type: :request do
     it 'renders correct template' do
       expect(response).to render_template(:index)
     end
-    
+
     it 'renders correct content' do
       expect(response.body).to include('categories')
       expect(response.body).to include('Test category')
       expect(response.body).to include('$200.0')
     end
-
   end
 
-  describe "GET /new" do
+  describe 'GET /new' do
     before(:each) do
       @user = User.create(name: 'Test', email: 'text@example.com', password: '123456')
       @category = Category.create(name: 'Test category',
@@ -49,8 +48,6 @@ RSpec.describe "Categories", type: :request do
 
     it 'renders correct content' do
       expect(response.body).to include('CATEGORIES')
-      
     end
-
-end
+  end
 end

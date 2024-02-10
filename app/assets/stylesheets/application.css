@@ -14,76 +14,78 @@
  *= require_self
  */
 
- @import url('http://fonts.cdnfonts.com/css/proxima-nova-2');
+@import url('http://fonts.cdnfonts.com/css/proxima-nova-2');
 
- *,
- *::after,
- *::before {
-   -webkit-box-sizing: border-box;
-   box-sizing: border-box;
-   margin: 0;
-   padding: 0;
- }
- 
- :root {
-   --primary: #3778c2;
-   --secondary: #5fb523;
-   --terciary: #434b54;
-   --brand: #d23228;
-   --success: #0d7d4d;
-   --info: #03c7e8;
-   --warning: #f0cc00;
-   --danger: #ab0d02;
-   --light: #f1ecea;
-   --dark: #00262b;
-   --white: #fff;
-   --proxima-font: 'Proxima Nova', sans-serif;
- }
- 
- html,
- body {
-   height: 100%;
-  }
- 
- body {
-   font-family: var(--proxima-font);
- }
- 
- ul {
-   list-style: none;
- }
- 
- a,
- a::after,
- a:visited,
- a:active,
- a:hover {
-   color: inherit;
-   text-decoration: inherit;
- }
- 
- .bg-primary {
-   background-color: var(--primary) !important;
- }
- 
- .bg-secondary {
-   background-color: var(--secondary);
- }
- 
- .text-terciary {
-   color: var(--terciary);
- }
- .session {
+*,
+*::after,
+*::before {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --primary: #3778c2;
+  --secondary: #5fb523;
+  --terciary: #434b54;
+  --brand: #d23228;
+  --success: #0d7d4d;
+  --info: #03c7e8;
+  --warning: #f0cc00;
+  --danger: #ab0d02;
+  --light: #f1ecea;
+  --dark: #00262b;
+  --white: #fff;
+  --proxima-font: 'Proxima Nova', sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: var(--proxima-font);
+}
+
+ul {
+  list-style: none;
+}
+
+a,
+a::after,
+a:visited,
+a:active,
+a:hover {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+.bg-primary {
+  background-color: var(--primary) !important;
+}
+
+.bg-secondary {
+  background-color: var(--secondary);
+}
+
+.text-terciary {
+  color: var(--terciary);
+}
+
+.session {
   border: solid 1px var(--primary);
   color: var(--secondary);
- }
- .text {
-  font-family: var(--proxima-font);
- }
+}
 
- .cat-text {
+.text {
+  font-family: var(--proxima-font);
+}
+
+.cat-text {
   border: salmon 2px solid;
- }
+}
 
 .icon {
   width: 100px;
@@ -110,8 +112,7 @@
   margin-left: 8em;
 }
 
-.exp-text >  h2 {
-color: red;
+.exp-text > h2 {
+  color: red;
   justify-content: space-between;
 }
-

@@ -1,10 +1,11 @@
 require 'rails_helper'
 
-RSpec.describe "Expenses", type: :request do
-  describe "GET /expenses" do
+RSpec.describe 'Expenses', type: :request do
+  describe 'GET /expenses' do
     before(:each) do
       @user = User.create(name: 'Test', email: 'text@example.com', password: '123456')
-      @category = Category.create(name: 'Test category', icon: 'https://cdn-icons-png.flaticon.com/128/2731/2731636.png', user: @user)
+      @category = Category.create(name: 'Test category',
+                                  icon: 'https://cdn-icons-png.flaticon.com/128/2731/2731636.png', user: @user)
       @expense = Expense.create(name: 'Test payment', amount: 200, category: @category)
 
       post user_session_path, params: { user: { email: @user.email, password: @user.password } }
@@ -18,13 +19,13 @@ RSpec.describe "Expenses", type: :request do
     it 'renders correct template' do
       expect(response).to render_template(:index)
     end
+  end
 
-   end
-
-  describe "GET /expenses/new" do
+  describe 'GET /expenses/new' do
     before(:each) do
       @user = User.create(name: 'Test', email: 'text@example.com', password: '123456')
-      @category = Category.create(name: 'Test category', icon: 'https://cdn-icons-png.flaticon.com/128/2731/2731636.png', user: @user)
+      @category = Category.create(name: 'Test category',
+                                  icon: 'https://cdn-icons-png.flaticon.com/128/2731/2731636.png', user: @user)
       @expense = Expense.create(name: 'Test payment', amount: 200, category: @category)
 
       post user_session_path, params: { user: { email: @user.email, password: @user.password } }
@@ -42,5 +43,5 @@ RSpec.describe "Expenses", type: :request do
     it 'renders correct content' do
       expect(response.body).to include('CATEGORIES')
     end
-   end
+  end
 end
