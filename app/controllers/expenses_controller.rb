@@ -5,9 +5,9 @@ class ExpensesController < ApplicationController
 
   # GET /expenses
   def index
-    @expenses = Expense.all
-    # @expenses = @category.expenses.order(created_at: :desc)
-    # @total_amount = @category.expenses.sum(:amount)
+    
+    @expenses = @category.expenses.order(created_at: :desc)
+    @total_amount = @category.expenses.sum(:amount)
    
   end
 
