@@ -14,163 +14,104 @@
  *= require_self
  */
 
- body {
+ @import url('http://fonts.cdnfonts.com/css/proxima-nova-2');
+
+ *,
+ *::after,
+ *::before {
+   -webkit-box-sizing: border-box;
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+ }
  
-  margin: 0;
+ :root {
+   --primary: #3778c2;
+   --secondary: #5fb523;
+   --terciary: #434b54;
+   --brand: #d23228;
+   --success: #0d7d4d;
+   --info: #03c7e8;
+   --warning: #f0cc00;
+   --danger: #ab0d02;
+   --light: #f1ecea;
+   --dark: #00262b;
+   --white: #fff;
+   --proxima-font: 'Proxima Nova', sans-serif;
+ }
+ 
+ html,
+ body {
+   height: 100%;
+  }
+ 
+ body {
+   font-family: var(--proxima-font);
+ }
+ 
+ ul {
+   list-style: none;
+ }
+ 
+ a,
+ a::after,
+ a:visited,
+ a:active,
+ a:hover {
+   color: inherit;
+   text-decoration: inherit;
+ }
+ 
+ .bg-primary {
+   background-color: var(--primary) !important;
+ }
+ 
+ .bg-secondary {
+   background-color: var(--secondary);
+ }
+ 
+ .text-terciary {
+   color: var(--terciary);
+ }
+ .session {
+  border: solid 1px var(--primary);
+  color: var(--secondary);
+ }
+ .text {
+  font-family: var(--proxima-font);
  }
 
-.hero-body {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+ .cat-text {
+  border: salmon 2px solid;
+ }
+
+.icon {
+  width: 100px;
+  height: 100px;
+  border: rgb(125, 250, 114) 2px solid;
 }
 
-.title {
-  text-align: center;
+#category {
+  border: salmon 2px solid;
+  margin: 1em;
+  background: var(--white);
 }
 
-
-.hero-head {
-  display: flex;
-}
-
-.buttons {
-  justify-self: flex-end;
-}
-
-.container img {
-  max-width: 98vw;
-  height: auto;
-}
-
-.expense {
-  margin: 10px;
-  padding: 10px;
-  background-color: white;
-  color: #333;
-  border: 1px solid #ccc;
-}
-
-.expense img {
-  width: 40px;
-  height: 40px;
-  margin-right: 10px;
-}
-
-.expense h5 {
-  margin: 0;
-  padding: 0;
-}
-
-.categories-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-}
-
-.category {
-  display: flex;
-  flex-direction: column;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  padding: 20px;
-}
-
-.category-details {
-  margin-bottom: 10px;
-}
-
-.category-icon img {
-  max-width: 100px;
-}
-
-.category-actions {
-  margin-top: auto;
-}
-
-.btn {
-  display: inline-block;
-  padding: 10px 20px;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 5px;
-}
-
-.btn:hover {
-  background-color: #0056b3;
-}
-
-.login {
+.cate-item {
   display: flex;
   flex-direction: row;
-  border: salmon 2px solid;
+}
+
+.cate-text {
+  display: flex;
+}
+
+.cate-text p {
+  margin-left: 8em;
+}
+
+.exp-text >  h2 {
+color: red;
   justify-content: space-between;
-  background-color: #fff;
-}
-.hero{
-  background-color: #007bff;
-  height: 100vh;
-
 }
 
-.btns{
-  
- display: flex;
- flex-direction: row;
- justify-content: space-between;
-}
-.btn{
-  background-color: chartreuse;
-  margin-left: 1em;
-}
-
-.btn:last-child {
-  margin-right: 1em;
-}
-
-.navbar {
-  background-color: #3778c2; /* Set the background color */
-}
-
-#navbarNav {
-  display: flex;
-  margin-right: 4em;
-}
-
-.navbar-nav {
-  display: flex;
-  flex-direction: row; /* Align items horizontally */
-  justify-content: flex-end;
-  margin-left: 2em;
-  list-style: none;
-}
-
-.navbar-brand {
-  font-weight: bold; /* Make the brand text bold */
-  color: #434b54; /* Set the text color */
-}
-
-.navbar-nav .nav-link {
-  color: #434b54; 
-  margin-left: 1em;
-}
-
-.navbar-nav .nav-link:hover {
-  color: #007bff; /* Change text color on hover */
-}
-
-.navbar-toggler {
-  border-color: #343a40; /* Set the border color */
-}
-
-.navbar-toggler-icon {
-  background-color: #343a40; /* Set the icon color */
-}
-
-.navbar-collapse {
-  justify-content: flex-end; /* Align items to the right */
-}
-.cat-title {
-  text-align: center;
-}

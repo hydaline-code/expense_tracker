@@ -1,16 +1,28 @@
-<h1>Category Details</h1>
+<div class="flex flex-col justify-between min-h-screen">
+  <div class="container mx-auto flex justify-start items-center bg-primary text-white font-light px-3 py-4">
+    <%= link_to categories_path do %>
+      <i class="fa-solid fa-arrow-left fa-xl "></i>
+    <% end %>
+    <h5 class="font-light grow text-center">EXPENSES</h5> 
+  </div>
 
-<div>
-  <p><strong>Name:</strong> <%= @category.name %></p>
-  <p><strong>Icon:</strong> <%= @category.icon %></p>
- <p>Total Amount: <%= number_to_currency(@category.expenses.sum(:amount)) %></p>
+  <p class="text-green-500 p-3"><%= notice %></p>
+
+  <div class="grow">
+    <% @expenses.each do |expense| %> 
+      <div class="flex justify-between items-center m-3 p-3 bg-white text-terciary">
+        <div>
+          <h5><%= expense.name %></h5> 
+          <h5><%= expense.created_at.strftime("%Y-%m-%d") %></h5> 
+        </div>
+        <h5>$<%= expense.amount %></h5> 
+      </div>
+    <% end %>
+    <h5 class="m-3 p-3 bg-white text-terciary text-center text-2xl">Total for <%= @category.name %>  $<%= @category.expenses.sum(:amount) %></h5> <!-- Adjust to calculate total expenses -->
+  </div>
+
+  <div class="bg-secondary p-4 text-center text-3xl text-white font-light">
+    <%= link_to "New Expense", new_category_expense_path(@category), class: "border border-white hover:bg-blue-700 block p-4 rounded" %>
+  </div> 
 </div>
 
-<div>
-  <%= link_to "Edit", edit_category_path(@category), class: "btn btn-info" %>
-  <%= link_to "Delete", category_path(@category), method: :delete,  class: "btn btn-danger" %>
-</div>
-
-
-
-<%= link_to "Back to Categories", categories_path %>

@@ -1,8 +1,14 @@
 Rails.application.routes.draw do
   devise_for :users
-  root "splash#index"
 
+  unauthenticated do
+    root "splash#index"
+  end
 
+ authenticated :user do
+    root 'categories#index', as: :authenticated_root
+  end
+  
   delete 'logout', to: 'devise/sessions#destroy', as: :logout
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -14,5 +20,7 @@ Rails.application.routes.draw do
   resources :categories do
     resources :expenses
   end  
-  resources :expenses, only: [:index, :show, :new, :create, :edit, :update, :destroy]
+  # resources :categories 
+    resources :expenses
+   
 end
