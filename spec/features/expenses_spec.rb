@@ -46,8 +46,8 @@ RSpec.describe 'Testing expenses views', type: :feature do
     click_button 'Save'
   
     expect(page).to have_content 'Expense was successfully created.'
-  
     expect(page).to have_content 'Groceries'
+     expect(page).to have_content '$50.0'
   end
   
 
