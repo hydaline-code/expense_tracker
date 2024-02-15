@@ -3,12 +3,12 @@
     <%= link_to categories_path do %>
       <i class="fa-solid fa-arrow-left fa-xl"></i>
     <% end %>
-    <h2>Expenses for <%= @category.name %></h2>
+
+    <h5 class="font-light grow text-center">Expenses for <%= @category.name %></h5>
 </div>
 <div class="total-amount">
   <p>Total Amount: <%= number_to_currency(@category.expenses.sum(:amount)) %></p>
 </div>
-
 <div id="payments">
 <% @category.expenses.each do |expense| %>
   <%= render expense %>

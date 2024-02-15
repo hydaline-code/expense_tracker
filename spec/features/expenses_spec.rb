@@ -38,17 +38,18 @@ RSpec.describe 'Testing expenses views', type: :feature do
      expect(page).to have_button('Save')
   end
 
-  # it 'creates a new expense when the form is submitted with valid data' do
-  #   visit category_path(@category.id)
-  #   click_link('New Expense')
-  #   # fill_in 'Name', with: "Groceries"
-  #   # fill_in 'Amount', with: 50.0
-  #   # select @category.name, from: 'Category'
-  #   click_button 'Save'
-  #   # expect(page).to have_content 'Groceries'
-  #   #  expect(page).to have_content '$50.0'
-  #    expect(page).to have_content 'Expense was successfully created.'
-  # end
+  it 'creates a new expense when the form is submitted with valid data' do
+    visit category_path(@category.id)
+    click_link('New Expense')
+    fill_in 'Name', with: 'Groceries'
+    fill_in 'Amount', with: '50'
+    click_button 'Save'
+  
+    expect(page).to have_content 'Expense was successfully created.'
+  
+    expect(page).to have_content 'Groceries'
+  end
+  
 
   it 'displays an error message when the form is submitted with invalid data' do
     visit category_path(@category.id)

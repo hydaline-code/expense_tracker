@@ -29,12 +29,11 @@ class ExpensesController < ApplicationController
     if @expense.save
       redirect_to category_expenses_path(@expense.category), notice: 'Expense was successfully created.'
     else
-      puts @expense.errors.full_messages # Print any validation errors to console
+      puts @expense.errors.full_messages
       render :new, status: :unprocessable_entity
     end
   end
 
-  # PATCH/PUT /expenses/1
   def update
     if @expense.update(expense_params)
       redirect_to @expense, notice: 'Expense was successfully updated.'
