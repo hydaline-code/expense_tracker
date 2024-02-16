@@ -50,7 +50,6 @@ RSpec.describe 'Testing expenses views', type: :feature do
      expect(page).to have_content '$50.0'
   end
   
-
   it 'displays an error message when the form is submitted with invalid data' do
     visit category_path(@category.id)
     click_link('New Expense')
