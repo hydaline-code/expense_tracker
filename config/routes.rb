@@ -1,12 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
+  
   resources :categories do
     resources :expenses
   end  
  
-
-
-  
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
@@ -22,5 +20,5 @@ Rails.application.routes.draw do
    authenticated :user do
       root 'categories#index', as: :authenticated_root
     end
-    
+
 end
