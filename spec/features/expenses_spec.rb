@@ -25,7 +25,7 @@ RSpec.describe 'Testing expenses views', type: :feature do
 
   it 'allows user to create a new expense with name and amount' do
     visit category_path(@category.id)
-    
+
     expect(page).to have_content 'New Expense'
   end
 
@@ -35,7 +35,7 @@ RSpec.describe 'Testing expenses views', type: :feature do
     expect(page).to have_field('Name')
     expect(page).to have_field('Amount')
     select @category.name, from: 'Category'
-     expect(page).to have_button('Save')
+    expect(page).to have_button('Save')
   end
 
   it 'creates a new expense when the form is submitted with valid data' do
@@ -44,12 +44,12 @@ RSpec.describe 'Testing expenses views', type: :feature do
     fill_in 'Name', with: 'Groceries'
     fill_in 'Amount', with: '50'
     click_button 'Save'
-  
+
     expect(page).to have_content 'Expense was successfully created.'
     expect(page).to have_content 'Groceries'
-     expect(page).to have_content '$50.0'
+    expect(page).to have_content '$50.0'
   end
-  
+
   it 'displays an error message when the form is submitted with invalid data' do
     visit category_path(@category.id)
     click_link('New Expense')
@@ -59,5 +59,4 @@ RSpec.describe 'Testing expenses views', type: :feature do
     expect(page).to have_content "Name can't be blank"
     expect(page).to have_content "Amount can't be blank"
   end
-  
 end

@@ -3,12 +3,10 @@ class ExpensesController < ApplicationController
   before_action :set_expense, only: %i[show edit update destroy]
   before_action :set_category
 
-
   def index
     @expenses = @category.expenses.order(created_at: :desc)
     @total_amount = @category.expenses.sum(:amount)
   end
-
 
   def show; end
 
@@ -20,7 +18,6 @@ class ExpensesController < ApplicationController
   def edit
     @categories = current_user.categories
   end
-
 
   def create
     @expense = current_user.expenses.new(expense_params)
@@ -41,7 +38,6 @@ class ExpensesController < ApplicationController
     end
   end
 
-
   def destroy
     @expense.destroy
     redirect_to expenses_url, notice: 'Expense was successfully destroyed.'
@@ -56,7 +52,6 @@ class ExpensesController < ApplicationController
     redirect_to categories_path
   end
 
-  
   def set_expense
     @expense = current_user.expenses.find(params[:id])
   end
