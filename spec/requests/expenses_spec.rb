@@ -21,7 +21,7 @@ RSpec.describe 'Expenses', type: :request do
     end
   end
 
-  describe 'GET /expenses/new' do
+  describe 'GET /categories/:category_id/expenses/new' do
     before(:each) do
       @user = User.create(name: 'Test', email: 'text@example.com', password: '123456')
       @category = Category.create(name: 'Test category',
@@ -41,7 +41,8 @@ RSpec.describe 'Expenses', type: :request do
     end
 
     it 'renders correct content' do
-      expect(response.body).to include('CATEGORIES')
+      expect(response.body).to include('My Expense Tracker')
     end
   end
-end
+  end
+
