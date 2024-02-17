@@ -13,7 +13,6 @@
  *= require_tree .
  *= require_self
  */
-
 @import url('http://fonts.cdnfonts.com/css/proxima-nova-2');
 
 *,
@@ -74,45 +73,14 @@ a:hover {
   color: var(--terciary);
 }
 
-.session {
-  border: solid 1px var(--primary);
-  color: var(--secondary);
+.fixed {
+  position: fixed;
 }
 
-.text {
-  font-family: var(--proxima-font);
+.bottom-0 {
+  bottom: 0;
 }
 
-.cat-text {
-  border: salmon 2px solid;
-}
-
-.icon {
-  width: 100px;
-  height: 100px;
-  border: rgb(125, 250, 114) 2px solid;
-}
-
-#category {
-  border: salmon 2px solid;
-  margin: 1em;
-  background: var(--white);
-}
-
-.cate-item {
-  display: flex;
-  flex-direction: row;
-}
-
-.cate-text {
-  display: flex;
-}
-
-.cate-text p {
-  margin-left: 8em;
-}
-
-.exp-text > h2 {
-  color: red;
-  justify-content: space-between;
+.left-0 {
+  left: 0;
 }

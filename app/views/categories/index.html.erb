@@ -6,13 +6,13 @@
       <i class="fa-solid fa-search fa-lg"></i>
     </a>
   </section>
-  <div id="menu-list" class="hidden md:hidden bg-gray-200 p-4">
+  <div id="menu-list" class="hidden  bg-gray-200 p-4">
     <%= link_to "Home", root_path, class: "block py-2 text-gray-800 hover:text-gray-600 mb-4" %>
-    <%= link_to "Categories", categories_path, class: "block py-2 text-gray-800 hover:text-gray-600 mb-4" %>
-    <%= link_to "Exit", destroy_user_session_path, method: :delete, class: "block py-2 text-gray-800 hover:text-gray-600 mb-4" %>
+     <%= button_to "Logout", destroy_user_session_path, method: :delete, class: "block py-2 text-gray-800 hover:text-gray-600 mb-4" %>
   </div>
+   
   <p class="text-green-500 px-3"><%= notice %></p>
-
+  
   <div id="categories" class="grow">
     <% @categories.each do |category| %>
       <%= link_to category  do %>
@@ -21,7 +21,11 @@
     <% end %>
   </div>
   <div class="bg-secondary p-4 text-center text-3xl text-white font-light">
-    <%= link_to "New Category", new_category_path, class: "border border-white hover:opacity-70 block p-4 rounded" %>
+    <% if params[:action] == 'new' %>
+      <%= link_to "Back", categories_path, class: "border border-white hover:opacity-70 block p-4 rounded" %>
+    <% else %>
+      <%= link_to "New Category", new_category_path, class: "border border-white hover:opacity-70 block p-4 rounded" %>
+    <% end %>
   </div>
 </div>
 

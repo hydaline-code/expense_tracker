@@ -1,4 +1,11 @@
+
+
 <div id="<%= dom_id expense %>">
+  <p>
+    <strong>Amount:</strong>
+    <%= number_to_currency(expense.amount) %>
+  </p>
+
   <p>
     <strong>Category:</strong>
     <%= expense.category_id %>
@@ -9,8 +16,5 @@
     <%= expense.name %>
   </p>
 
-  <p>
-    <strong>Amount:</strong>
-    <%= expense.amount %>
-  </p>
+  
 </div>

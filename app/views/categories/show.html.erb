@@ -7,8 +7,8 @@
   </div>
 
   <p class="text-green-500 p-3"><%= notice %></p>
-
-  <div class="grow">
+<h5 class="m-3 p-3 bg-white text-terciary text-center text-2xl">Total for <%= @category.name %>  $<%= @category.expenses.sum(:amount) %></h5> 
+  <div class="expenses-container overflow-y-auto">
     <% @expenses.each do |expense| %> 
       <div class="flex justify-between items-center m-3 p-3 bg-white text-terciary">
         <div>
@@ -18,11 +18,10 @@
         <h5>$<%= expense.amount %></h5> 
       </div>
     <% end %>
-    <h5 class="m-3 p-3 bg-white text-terciary text-center text-2xl">Total for <%= @category.name %>  $<%= @category.expenses.sum(:amount) %></h5> <!-- Adjust to calculate total expenses -->
+    
   </div>
 
   <div class="bg-secondary p-4 text-center text-3xl text-white font-light">
     <%= link_to "New Expense", new_category_expense_path(@category), class: "border border-white hover:bg-blue-700 block p-4 rounded" %>
   </div> 
 </div>
-
