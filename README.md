@@ -69,8 +69,9 @@ This is a mobile web application where you can manage your budget: you have a li
 
 ## Video Presentation
 
-[video link](https://www.loom.com/share/074959dea42b4e408a9b17d4c450918d?sid=735c19aa-da01-4d73-8254-1347a510638f)
+[video link](https://drive.google.com/file/d/16Qktky0anaig0xfyzDlhOH9ppj0Bn5Og/view?usp=sharing)
 
+<!-- I have trying for days now to record on loom when i do the recording it fails to upload it to loom so i used zoom -->
 
 <!-- GETTING STARTED -->
 
