@@ -144,10 +144,8 @@ This is a mobile web application where you can manage your budget: you have a li
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-> Describe 1 - 3 features you will add to the project.
-
-- [ ] **[Interactive screen ]**
-- [ ] **[Edit and delete features ]**
+- **[Interactive screen ]**
+- **[Edit and delete features ]**
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -158,7 +156,7 @@ This is a mobile web application where you can manage your budget: you have a li
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](../../issues/).
+Feel free to check the [issues page](https://github.com/hydaline-code/expense_tracker/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -184,6 +182,6 @@ Feel free to check the [issues page](../../issues/).
 
 ## 📝 License <a name="license"></a>
 
-This project is [MIT](./LICENSE) licensed.
+This project is [MIT](https://github.com/hydaline-code/expense_tracker?tab=MIT-1-ov-file) licensed.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
