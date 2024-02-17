@@ -1,21 +1,18 @@
 <p style="color: green"><%= notice %></p>
 
- <div class="container mx-auto flex justify-start items-center bg-primary text-white font-light px-3 py-4 exp-text">
-    <%= link_to categories_path do %>
-      <i class="fa-solid fa-arrow-left fa-xl"></i>
-    <% end %>
-
-    <h5 class="font-light grow text-center">Expenses for <%= @category.name %></h5>
-</div>
-<div class="total-amount">
-  <p>Total Amount: <%= number_to_currency(@category.expenses.sum(:amount)) %></p>
+<div class="container mx-auto flex justify-start items-center bg-primary text-white font-light px-3 py-4 exp-text">
+  <%= link_to categories_path do %>
+    <i class="fa-solid fa-arrow-left fa-xl"></i>
+  <% end %>
+  <h5 class="font-light grow text-center">Expenses for <%= @category.name %></h5>
 </div>
 
 <div id="payments">
-<% @category.expenses.each do |expense| %>
-  <%= render expense %>
-<% end %>
+  <% @category.expenses.each do |expense| %>
+    <%= render expense %>
+  <% end %>
 </div>
 
-
-
+<div class="total-amount">
+  <p>Total Amount: <%= number_to_currency(@category.expenses.sum(:amount)) %></p>
+</div>

@@ -21,7 +21,11 @@
     <% end %>
   </div>
   <div class="bg-secondary p-4 text-center text-3xl text-white font-light">
-    <%= link_to "New Category", new_category_path, class: "border border-white hover:opacity-70 block p-4 rounded" %>
+    <% if params[:action] == 'new' %>
+      <%= link_to "Back", categories_path, class: "border border-white hover:opacity-70 block p-4 rounded" %>
+    <% else %>
+      <%= link_to "New Category", new_category_path, class: "border border-white hover:opacity-70 block p-4 rounded" %>
+    <% end %>
   </div>
 </div>
 

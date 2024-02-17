@@ -1,9 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   
-  resources :categories do
-    resources :expenses
-  end  
+ 
  
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -20,5 +18,9 @@ Rails.application.routes.draw do
    authenticated :user do
       root 'categories#index', as: :authenticated_root
     end
+
+    resources :categories do
+      resources :expenses
+    end  
 
 end
